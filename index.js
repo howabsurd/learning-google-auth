@@ -28,9 +28,9 @@ app.use(passport.session());
 passport.use(
   new GoogleStrategy(
     {
-      clientID: "359153381922-4k9ohre31m6mgjoke2du26cnhb2fqi4r.apps.googleusercontent.com",
-      clientSecret: "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",
-      callbackURL: "http://localhost:8000/auth/google/callback",
+      clientID: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+      callbackURL: process.env.CALLBACK,
     },
     function (accessToken, refreshToken, profile, cb) {
       // Use the profile information to authenticate the user
